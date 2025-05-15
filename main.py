@@ -4,7 +4,8 @@ from openpyxl import load_workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 import os
 
-load_dotenv(".env")
+load_dotenv(".env") # Coloco .env por segurança
+
 # Caminho dos arquivos
 caminho_pasta = os.getenv('CAMINHO_PASTA')
 arquivo_entrada = os.path.join(caminho_pasta, 'exemplo_excel_dadosanonimos.xlsx')  # Arquivo de entrada (original)
