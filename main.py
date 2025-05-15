@@ -1,12 +1,13 @@
 import pandas as pd
+from dotenv import load_dotenv
 from openpyxl import load_workbook
 from openpyxl.styles import Alignment, Font, PatternFill
-from openpyxl.utils import get_column_letter
 import os
 
+load_dotenv(".env")
 # Caminho dos arquivos
-caminho_pasta = r'X:\arrumar_excel'
-arquivo_entrada = os.path.join(caminho_pasta, 'sc_xls_20250513150234_686_grid_db_angariacao_excel.xlsx')  # Arquivo de entrada (original)
+caminho_pasta = os.getenv('CAMINHO_PASTA')
+arquivo_entrada = os.path.join(caminho_pasta, 'exemplo_excel_dadosanonimos.xlsx')  # Arquivo de entrada (original)
 arquivo_saida = os.path.join(caminho_pasta, 'funcionarios_dependentes_formatado.xlsx')  # Arquivo de saída formatado
 
 # Carrega o Excel original em um DataFrame usando a biblioteca pandas.
